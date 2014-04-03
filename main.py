@@ -1,4 +1,5 @@
-#!/usr/include/python
+# -*- coding: utf-8 -*-
+
 import sys
 import os
 import wikipedia
@@ -32,13 +33,13 @@ def GetWikiLinks(word_tag):
     return word_links
 
 def ShowOutput(tweet, word_links):
-    print tweet
+    print tweet.encode('utf8')
     for item in word_links:
         entity = item[0]
         links = item[1]
-        print entity
+        print entity.encode('utf8')
         for link in links:
-            print '\t' + link
+            print '\t' + link.encode('utf8')
 
 if __name__ == '__main__':
     if len(sys.argv) != 2:
